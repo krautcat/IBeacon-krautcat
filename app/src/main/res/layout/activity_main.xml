@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="localhost.krautcat.ibeacon.MainActivity"
     android:orientation="horizontal">
 
@@ -10,11 +14,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/edit_message"
-        android:layout_weight="3" />
+        android:layout_weight="3"
+        android:textColor="@color/colorTextOnBlack"
+        android:textColorHint="@color/colorTextOnBlack"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:onClick="sendMessage" />
 
 </LinearLayout>
