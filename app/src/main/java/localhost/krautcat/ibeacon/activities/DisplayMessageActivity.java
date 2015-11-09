@@ -1,4 +1,4 @@
-package localhost.krautcat.ibeacon;
+package localhost.krautcat.ibeacon.activities;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -8,18 +8,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import localhost.krautcat.ibeacon.R;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // при создании -- сохраненное состояние
+        // при создании -- сохраненное состояние + выбираем соответствующий layout
         super.onCreate(savedInstanceState);
-        // выбираем view
         setContentView(R.layout.activity_display_message);
 
         // получаем сообщение от интента

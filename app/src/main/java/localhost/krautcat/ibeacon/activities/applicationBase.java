@@ -1,4 +1,4 @@
-package localhost.krautcat.ibeacon;
+package localhost.krautcat.ibeacon.activities;
 
 import android.app.Application;
 import com.estimote.sdk.EstimoteSDK;

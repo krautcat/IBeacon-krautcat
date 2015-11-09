@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/about"
-        android:title="About" />
-    <item android:id="@+id/help"
-        android:title="Help" />
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item android:id="@+id/about"-->
+        <!--android:title="About" />-->
+    <!--<item android:id="@+id/help"-->
+        <!--android:title="Help" />-->
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_favorite"
+        android:title="mda"
+        app:showAsAction="ifRoom"/>
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
 </menu>
+

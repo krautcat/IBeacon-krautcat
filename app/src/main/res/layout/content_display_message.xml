@@ -16,6 +16,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
     tools:showIn="@layout/activity_display_message"
-    tools:context="localhost.krautcat.ibeacon.DisplayMessageActivity">
+    tools:context="localhost.krautcat.ibeacon.activities.DisplayMessageActivity">
 
 </RelativeLayout>
