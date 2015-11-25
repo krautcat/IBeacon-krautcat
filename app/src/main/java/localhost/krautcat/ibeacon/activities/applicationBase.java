@@ -1,23 +1,24 @@
 package localhost.krautcat.ibeacon.activities;
 
 import android.app.Application;
-import com.estimote.sdk.EstimoteSDK;
+
+import org.altbeacon.beacon.BeaconManager;
+import org.altbeacon.beacon.powersave.BackgroundPowerSaver;
 
 /**
  * Created by krautcat on 05.11.15.
  */
 public class applicationBase extends Application {
+    private BackgroundPowerSaver backgroundPowerSaver;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        BeaconManager beaconManager = org.altbeacon.beacon.BeaconManager.getInstanceForApplication(this);
 
-        // Initializes Estimote SDK with your App ID and App Token from Estimote Cloud.
-        // You can find your App ID and App Token in the
-        // Apps section of the Estimote Cloud (http://cloud.estimote.com).
-        EstimoteSDK.initialize(this, "ibeacon-krautcat-universit-hyw", "7570e3a02c04d9087a22c7ee11a09128");
-
-        // Configure verbose debug logging.
-        EstimoteSDK.enableDebugLogging(true);
+        // simply constructing this class and holding a reference to it in your custom Application
+        // class will automatically cause the BeaconLibrary to save battery whenever the application
+        // is not visible.  This reduces bluetooth power usage by about 60%
+        backgroundPowerSaver = new BackgroundPowerSaver(this);
     }
 }
