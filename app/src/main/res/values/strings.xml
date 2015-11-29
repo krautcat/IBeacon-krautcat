@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">iBeacon</string>
-    <string name="edit_message">Enter a message</string>
-    <string name="button_send">Send</string>
 
     <string name="drawer_open">iBeacon</string>
     <string name="drawer_close">iBeacon</string>
@@ -9,9 +7,22 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="navigation_drawer_1">Get the map</string>
-    <string name="navigation_drawer_2">Turn off the Wi-Fi</string>
+    <string name="navigation_drawer_1">Navigation</string>
+    <string name="navigation_drawer_2">Sync map</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_display_message">Navigation</string>
+
+    <string name="textMainActivityStaticModifiedMap">Last modification</string>
+    <string name="textMainActivityStaticInfoMap">Info about map</string>
+    <string name="snackbarMainActivityDownloadUndone">Map is updating…</string>
+    <string name="toastMainActivityBluetoothRefused">You must enable Bluetooth for navigation</string>
+    <string name="toastMainActivityDownloadSuccess">Sync is completed</string>
+    <string name="toastMainActivityDownloadFail">Cannot update the map</string>
+
+    <string name="toastNavigationActivityBluetoothEnabled">Bluetooth is enabled</string>
+    <string name="toastNavigationActivityFindLocation">Finding location…</string>
+    <string name="toastNavigationActivityBeaconManagerRegionException">Error while detecting location</string>
+
+
 </resources>

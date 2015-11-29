@@ -71,8 +71,6 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
 
     private ArrayList<Beacon> beaconsList;
     private BeaconManager beaconManager;
-//    private Beacon beacon;
-//    private org.altbeacon.beacon.Region region;
 
     private DrawView dview;                             // view, отвечающая за рисование карты
     private SurfaceMovingPinView surfaceView;           // view для определения координат
@@ -93,8 +91,6 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
 
     private static float meterToPoints;
     private static float pointToPixel;
-
-    public int ifff = 0;
 
     /** ################################################################### **/
     /** ################################################################### **/
@@ -337,7 +333,7 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
         if (requestCode == REQUEST_ENABLE_BT) {
             switch (resultCode) {
                 case RESULT_OK: {
-                    Toast.makeText(this, "BT enabled", Toast.LENGTH_LONG);
+                    Toast.makeText(this, R.string.toastNavigationActivityBluetoothEnabled, Toast.LENGTH_LONG);
                     break;
                 }
                 case RESULT_CANCELED: {
@@ -454,7 +450,7 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
     // метод, который выполняет при коннекте к сервису маяков
     @Override
     public void onBeaconServiceConnect() {
-        final Toast toastOnNavigation = Toast.makeText(this, "определение местоположения", Toast.LENGTH_SHORT);
+        final Toast toastOnNavigation = Toast.makeText(this, R.string.toastNavigationActivityFindLocation, Toast.LENGTH_SHORT);
         beaconManager.setRangeNotifier(new RangeNotifier() {
             @Override
             public void didRangeBeaconsInRegion(final Collection<Beacon> beacons, org.altbeacon.beacon.Region region) {
@@ -478,7 +474,7 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
         try {
             beaconManager.startRangingBeaconsInRegion(new org.altbeacon.beacon.Region("0x00000000000000005545600000000000", null, null, null));
         } catch (RemoteException e) {
-            Toast.makeText(this, "M D A", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toastNavigationActivityBeaconManagerRegionException, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -578,7 +574,7 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
     }
 
     // подготовка парсера
-    XmlPullParser prepareXpp(File inpFile) throws IOException, XmlPullParserException {
+    private XmlPullParser prepareXpp(File inpFile) throws IOException, XmlPullParserException {
         // получаем фабрику и включаем поддержку namespace (по умолчанию выключена)
         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
         factory.setNamespaceAware(true);
@@ -646,7 +642,7 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
             ooo.translationXBy(t1)
                 .translationYBy(t2).start();
         } else {
-            Toast.makeText(this, "определение местоположения", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toastNavigationActivityFindLocation, Toast.LENGTH_SHORT).show();
             // TODO если число известных beacon не превышает три, то ничего не выводим
         }
     }
@@ -833,12 +829,12 @@ public class NavigationActivity extends AppCompatActivity implements BeaconConsu
             canvas.drawPath(bufPath, paint);
             Rect tempRect = region.getBounds();
             paint.setColor(Color.CYAN);
-            canvas.drawPoint(tempRect.exactCenterX(), tempRect.exactCenterY(), paint);
 
             if ( tempRect.isEmpty() ) {
                 setCoordXY(Integer.MIN_VALUE, Integer.MIN_VALUE);
             } else {
                 setCoordXY(tempRect.exactCenterX(), tempRect.exactCenterY());
+                canvas.drawPoint(tempRect.exactCenterX(), tempRect.exactCenterY(), paint);
             }
         }
 

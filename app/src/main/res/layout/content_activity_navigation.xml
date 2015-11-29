@@ -35,6 +35,23 @@
         android:src="@drawable/point_marker_icon"
         />
 
+
+
+    <ImageView
+        android:id="@+id/dot"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal|top"
+        android:visibility="gone"
+        android:src="@drawable/point_marker_icon"
+        />
+
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />
+
 </FrameLayout>
 
 <!--    TODO:  изменить ширину и высоту на значения, берущимися из dimens

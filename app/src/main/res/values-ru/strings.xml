@@ -1,13 +1,24 @@
 <resources>
     <string name="app_name">iBeacon</string>
-    <string name="edit_message">Введите сообщение</string>
-    <string name="button_send">Отправить</string>
 
     <string name="title_activity_navigation_drawer">navigation_drawer</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_1">Навигация</string>
+    <string name="navigation_drawer_2">Обновить карту</string>
 
     <string name="action_settings">Настройки</string>
     <string name="title_activity_display_message">Навигация</string>
+
+    <string name="textMainActivityStaticModifiedMap">Последнее изменение</string>
+    <string name="textMainActivityStaticInfoMap">Информация о карте</string>
+    <string name="snackbarMainActivityDownloadUndone">Карта обновляется…</string>
+    <string name="toastMainActivityBluetoothRefused">Для навигации необходимо активировать Bluetooth</string>
+    <string name="toastMainActivityDownloadSuccess">Обновление завершено</string>
+    <string name="toastMainActivityDownloadFail">Невозможно обновить карту</string>
+
+    <string name="toastNavigationActivityBluetoothEnabled">Bluetooth включен</string>
+    <string name="toastNavigationActivityFindLocation">Определение местоположения…</string>
+    <string name="toastNavigationActivityBeaconManagerRegionException">Ошибка при определении местоположения</string>
 </resources>
