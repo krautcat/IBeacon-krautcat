@@ -128,6 +128,14 @@ public class MainActivity extends AppCompatActivity implements
         // perform the actual navigation logic, updating the main content fragment etc
         switch (itemId) {
             case R.id.drawer_item_1: {
+                if (!mBluetoothAdapter.isEnabled()) {
+                    startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+                } else {
+                    Intent intent = new Intent(this, NavigationActivity.class);
+                    startActivity(intent);
+                }
+            }
+            case R.id.drawer_item_2: {
                 if (isDownloadDone) {
                     DonwloadAsyncTask downloadThread = new DonwloadAsyncTask();
                     downloadThread.execute();
@@ -136,14 +144,6 @@ public class MainActivity extends AppCompatActivity implements
                             Snackbar.LENGTH_SHORT).show();
                 }
             } break;
-            case R.id.drawer_item_2: {
-                if (!mBluetoothAdapter.isEnabled()) {
-                    startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-                } else {
-                    Intent intent = new Intent(this, NavigationActivity.class);
-                    startActivity(intent);
-                }
-            }
             break;
         }
 
